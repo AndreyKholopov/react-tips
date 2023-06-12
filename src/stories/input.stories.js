@@ -1,38 +1,46 @@
+import { useState } from "react"
+
 import MyInput from '../components/Input/Input.js'
 
 export default {
   title: 'Common components/Input',
-  component: MyInput
-}
-
-const Template = {
-  args: {
+  component: MyInput,
+  argTypes: {
+    value: {
+      control: {
+        disable: true,
+      },
+    },
   },
-  render: (args) => <MyInput {...args} />
 }
 
-export const Input = {
-  ...Template
+const Template = (args) => {
+  const [value, setValue] = useState(args.value ?? '')
+
+  return <MyInput
+    value={value}
+    setValue={(e) => {
+      setValue(e)
+    }}
+    {...args}
+  />
 }
 
-export const InputDisabled = {
-  ...Template,
-  args: {
-    disabled: true
-  }
+export const Input = Template.bind({})
+
+export const InputDisabled = Template.bind({})
+InputDisabled.args = {
+  disabled: true
 }
 
-export const InputError = {
-  ...Template,
-  args: {
-    error: true
-  }
+export const InputError = Template.bind({})
+InputError.args = {
+  error: true
 }
 
-export const InputDisabledError = {
-  ...Template,
-  args: {
-    disabled: true,
-    error: true
-  }
+
+export const InputDisabledError = Template.bind({})
+InputDisabledError.args = {
+  disabled: true,
+  error: true
 }

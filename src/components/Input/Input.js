@@ -9,6 +9,14 @@ const Input = ({
   className,
   error,
   disabled,
+  value,
+  setValue,
+  backgroundColor,
+  textColor,
+  errorColor,
+  bezelSize,
+  textSize,
+  radiusSize,
   ...attrs
 }) => {
 
@@ -32,10 +40,21 @@ const Input = ({
     'input__label'
   )
 
+  const dynamicStyles = {
+    '--color-background': backgroundColor,
+    '--color-text': textColor,
+    '--color-error': errorColor,
+
+    '--size-bezel': bezelSize,
+    '--size-radius': radiusSize,
+    '--size-text': textSize
+  }
+
   return (
     <div>
       <label
         className={classes}
+        style={dynamicStyles}
       >
 
         <input
@@ -43,8 +62,10 @@ const Input = ({
           type="text"
           placeholder=" "
           disabled={disabled}
+          value={value}
           onFocus={() => setHasError(false)}
           onBlur={() => error ? setHasError(true) : ''}
+          onChange={e => setValue(e.target.value)}
           {...attrs}
         />
 
@@ -56,14 +77,28 @@ const Input = ({
 
 Input.propTypes = {
   className: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  setValue: PropTypes.func.isRequired,
+  backgroundColor: PropTypes.string,
+  textColor: PropTypes.string,
+  errorColor: PropTypes.string,
+  bezelSize: PropTypes.string,
+  textSize: PropTypes.string,
+  radiusSize: PropTypes.string,
   error: PropTypes.bool,
   disabled: PropTypes.bool
 }
 
-Input.defaultTypes = {
+Input.defaultProps = {
   className: '',
-  error: true,
-  disabled: true
+  error: false,
+  disabled: false,
+  backgroundColor: 'white',
+  textColor: '#212121',
+  errorColor: '#ed4337',
+  bezelSize: '0.5rem',
+  textSize: 'calc(0.6rem + 0.4vw)',
+  radiusSize: '4px',
 }
 
 export default Input
