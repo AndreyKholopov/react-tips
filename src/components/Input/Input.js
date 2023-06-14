@@ -64,7 +64,7 @@ const Input = ({
           disabled={disabled}
           value={value}
           onFocus={() => setHasError(false)}
-          onBlur={() => error ? setHasError(true) : ''}
+          onBlur={() => error && setHasError(true)}
           onChange={e => setValue(e.target.value)}
           {...attrs}
         />

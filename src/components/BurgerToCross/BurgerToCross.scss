@@ -1,0 +1,83 @@
+.burger-to-cross {
+  --height: calc(var(--width) / 12 * 9);
+
+  display: block;
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: calc(var(--height) / 5);
+    width: 50%;
+    background: var(--primary-color);
+    transition: 0.25s ease-in-out;
+
+    &:nth-child(even) {
+      left: 50%;
+      border-radius: 0 calc(var(--height) / 5) calc(var(--height) / 5) 0;
+    }
+
+    &:nth-child(odd) {
+      left: 0;
+      border-radius: calc(var(--height) / 5) 0 0 calc(var(--height) / 5);
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      top: 0px;
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      top: calc(var(--height) / 5 * 2);
+    }
+
+    &:nth-child(5),
+    &:nth-child(6) {
+      top: calc(var(--height) / 5 * 4);
+    }
+  }
+
+  &.active {
+    span {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        left: calc(var(--height) / 9);
+        top: calc(var(--width) / 8.57);
+      }
+
+      &:nth-child(2) {
+        transform: rotate(-45deg);
+        left: calc(50% - calc(var(--height) / 9));
+        top: calc(var(--width) / 8.57);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(45deg);
+        left: -50%;
+        opacity: 0;
+      }
+
+      &:nth-child(4) {
+        transform: rotate(45deg);
+        left: 100%;
+        opacity: 0;
+      }
+
+      &:nth-child(5) {
+        transform: rotate(-45deg);
+        left: calc(var(--height) / 9);
+        top: calc(var(--height) / 5 * 4 - calc(var(--width) / 8.57));
+      }
+
+      &:nth-child(6) {
+        transform: rotate(45deg);
+        left: calc(50% - calc(var(--height) / 9));
+        top: calc(var(--height) / 5 * 4 - calc(var(--width) / 8.57));
+      }
+    }
+  }
+}
