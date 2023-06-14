@@ -10,7 +10,17 @@ export default {
       control: {
         disable: true,
       },
+      description: 'Значение в поле'
     },
+    setValue: {
+      description: 'Функция, устанавливающая значение в поле'
+    },
+    attrs: {
+      description: 'Любые параметры, которые работают с тегом input',
+      type: {
+        name: 'any'
+      }
+    }
   },
 }
 
