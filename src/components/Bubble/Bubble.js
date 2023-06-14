@@ -12,6 +12,7 @@ const Bubble = ({
   height,
   blur,
   blurSize,
+  children,
   ...attrs
 }) => {
 
@@ -39,10 +40,13 @@ const Bubble = ({
       >
       </BubbleSvg>
       {blur && <BubbleSvg
-        className={classes + ' blur'}
+        className={classes + ' bubble_blur'}
         {...attrs}
       >
       </BubbleSvg>}
+      <div className="bubble__content">
+        {children}
+        </div>
     </div>
   )
 }

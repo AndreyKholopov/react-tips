@@ -11,6 +11,7 @@ const Card = ({
   radiusSize,
   width,
   height,
+  children,
   ...attrs
 }) => {
 
@@ -34,6 +35,7 @@ const Card = ({
       style={dynamicStyles}
       {...attrs}
     >
+      {children}
     </div>
   )
 }
