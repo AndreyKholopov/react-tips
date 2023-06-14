@@ -43,14 +43,14 @@ Card.propTypes = {
   backgroundColor: PropTypes.string,
   borderColor: PropTypes.string,
   radiusSize: PropTypes.string,
-  width: [
+  width: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
-  ],
-  height: [
+  ]),
+  height: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
-  ]
+  ]),
 }
 
 Card.defaultProps = {

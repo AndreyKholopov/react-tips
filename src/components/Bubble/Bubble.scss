@@ -1,0 +1,16 @@
+.bubble {
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  fill: var(--color-background);
+
+  &__container {
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+  }
+}
+
+.blur {
+  filter: blur(var(--blur-size));
+}
