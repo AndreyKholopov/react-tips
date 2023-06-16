@@ -6,7 +6,7 @@ export default {
 }
 
 const Template = (args) => {
-  return <MyBubble{...args}/>
+  return <MyBubble {...args}/>
 }
 
 export const Bubble = Template.bind({})

@@ -42,12 +42,12 @@ const Input = ({
 
   const dynamicStyles = {
     '--color-background': backgroundColor,
-    '--color-text': textColor,
+    color: textColor,
     '--color-error': errorColor,
 
     '--size-bezel': bezelSize,
     '--size-radius': radiusSize,
-    '--size-text': textSize
+    fontSize: textSize
   }
 
   return (

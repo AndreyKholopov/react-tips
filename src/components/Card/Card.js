@@ -12,6 +12,7 @@ const Card = ({
   width,
   height,
   children,
+  overflow,
   ...attrs
 }) => {
 
@@ -21,12 +22,14 @@ const Card = ({
   )
 
   const dynamicStyles = {
-    '--color-background': backgroundColor,
-    '--color-border': borderColor,
+    background: backgroundColor,
+    borderColor: borderColor,
 
-    '--size-radius': radiusSize,
-    '--width': !isNaN(width) ? width + 'px' : width,
-    '--height': !isNaN(height) ? height + 'px' : height
+    borderRadius: radiusSize,
+    width: !isNaN(width) ? width + 'px' : width,
+    height: !isNaN(height) ? height + 'px' : height,
+
+    overflow: overflow
   }
 
   return (
@@ -45,6 +48,7 @@ Card.propTypes = {
   backgroundColor: PropTypes.string,
   borderColor: PropTypes.string,
   radiusSize: PropTypes.string,
+  overflow: PropTypes.string,
   width: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
@@ -60,6 +64,7 @@ Card.defaultProps = {
   backgroundColor: 'white',
   borderColor: '#212121',
   radiusSize: '16px',
+  overflow: '',
   width: '100%',
   height: 100
 }

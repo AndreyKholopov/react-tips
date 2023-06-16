@@ -1,9 +1,6 @@
 .card {
   box-sizing: border-box;
   display: block;
-  width: var(--width);
-  min-height: var(--height);
-  background: var(--color-background);
   border: 3px solid currentColor;
   border-radius: var(--size-radius);
   border-color: var(--color-border);

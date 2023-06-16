@@ -6,7 +6,7 @@ export default {
 }
 
 const Template = (args) => {
-  return <MyCard{...args}/>
+  return <MyCard {...args}/>
 }
 
 export const Card = Template.bind({})

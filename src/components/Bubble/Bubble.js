@@ -22,7 +22,7 @@ const Bubble = ({
   )
 
   const dynamicStyles = {
-    '--color-background': backgroundColor,
+    fill: backgroundColor,
 
     '--width': !isNaN(width) ? width + 'px' : width,
     '--height': !isNaN(height) ? height + 'px' : height,

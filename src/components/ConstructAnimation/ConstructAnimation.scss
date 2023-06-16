@@ -1,0 +1,105 @@
+.construct-animation {
+  position: relative;
+  display: block;
+  width: 5%;
+  height: 5%;
+
+  &__wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__children-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @keyframes constructAnimationTop {
+    0% {
+      opacity: 0;
+      transform: scale(0) translateY(-100vh);
+    }
+
+    50% {
+      background: var(--background);
+      background-position: var(--background-position);
+      background-size: var(--background-size);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0px);
+      background: var(--background);
+      background-position: var(--background-position);
+      background-size: var(--background-size);
+    }
+  }
+
+  @keyframes constructAnimationRight {
+    0% {
+      opacity: 0;
+      transform: scale(0) translateX(-100vw);
+    }
+
+    50% {
+      background: var(--background);
+      background-position: var(--background-position);
+      background-size: var(--background-size);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1) translateX(0px);
+      background: var(--background);
+      background-position: var(--background-position);
+      background-size: var(--background-size);
+    }
+  }
+
+  @keyframes constructAnimationDown {
+    0% {
+      opacity: 0;
+      transform: scale(0) translateY(100vh);
+    }
+
+    50% {
+      background: var(--background);
+      background-position: var(--background-position);
+      background-size: var(--background-size);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0px);
+      background: var(--background);
+      background-position: var(--background-position);
+      background-size: var(--background-size);
+    }
+  }
+
+  @keyframes constructAnimationLeft {
+    0% {
+      opacity: 0;
+      transform: scale(0) translateX(100vw);
+    }
+
+    50% {
+      background: var(--background);
+      background-position: var(--background-position);
+      background-size: var(--background-size);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1) translateX(0px);
+      background: var(--background);
+      background-position: var(--background-position);
+      background-size: var(--background-size);
+    }
+  }
+}

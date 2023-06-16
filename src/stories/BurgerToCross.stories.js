@@ -3,7 +3,7 @@ import { useState } from "react"
 import MyBurgerToCross from '../components/BurgerToCross/BurgerToCross.js'
 
 export default {
-  title: 'Common components/BurgerToCross',
+  title: 'Common components/Burger to cross',
   component: MyBurgerToCross
 }
 
