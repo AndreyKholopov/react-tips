@@ -17,6 +17,7 @@ const Input = ({
   bezelSize,
   textSize,
   radiusSize,
+  label,
   ...attrs
 }) => {
 
@@ -51,7 +52,7 @@ const Input = ({
   }
 
   return (
-    <div>
+    <>
       <label
         className={classes}
         style={dynamicStyles}
@@ -69,9 +70,9 @@ const Input = ({
           {...attrs}
         />
 
-        <span className={classesLabel}>Label</span>
+        <span className={classesLabel}>{label}</span>
       </label>
-    </div>
+    </>
   )
 }
 
@@ -85,6 +86,7 @@ Input.propTypes = {
   bezelSize: PropTypes.string,
   textSize: PropTypes.string,
   radiusSize: PropTypes.string,
+  label: PropTypes.string,
   error: PropTypes.bool,
   disabled: PropTypes.bool
 }
@@ -99,6 +101,7 @@ Input.defaultProps = {
   bezelSize: '0.5rem',
   textSize: 'calc(0.6rem + 0.4vw)',
   radiusSize: '4px',
+  label: 'Label',
 }
 
 export default Input
