@@ -17,7 +17,6 @@
     white-space: nowrap;
     transform: translate(0, 0);
     transform-origin: 0 0;
-    background: var(--color-background);
     transition: transform 120ms ease-in;
     font-weight: bold;
     line-height: 1.2;
@@ -30,14 +29,17 @@
     border: 3px solid currentColor;
     padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
     color: currentColor;
-    background: transparent;
+    background: var(--color-background);
     border-radius: var(--size-radius);
+
+    &:focus {
+      outline: none;
+    }
 
     &:focus,
     &:not(:placeholder-shown) {
       & + .input__label {
-        transform: translate(0.25rem, -65%) scale(0.8);
-        color: var(--color-accent);
+        transform: translate(0.25rem, -95%) scale(0.8);
       }
     }
 
